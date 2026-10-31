@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #1a2421;
+    background-image:
+      radial-gradient(circle at 18% 15%, rgba(253, 224, 71, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 82% 75%, rgba(134, 239, 172, 0.06) 0%, transparent 45%),
+      linear-gradient(180deg, #1a2421 0%, #171f1c 50%, #1e1b18 100%);
+    color: #fdf6e2;
+    font-family: var(--font-jetbrains-mono), "JetBrains Mono", "Fira Code", monospace;
+  }
+}
+
+@layer utilities {
+  .text-glow-lantern {
+    text-shadow: 0 0 12px rgba(253, 224, 71, 0.35), 0 0 4px rgba(254, 240, 138, 0.25);
+  }
+
+  .text-glow-leaf {
+    text-shadow: 0 0 12px rgba(134, 239, 172, 0.35);
+  }
+
+  /* Filtro Ghibli vintage de fim de tarde para a fotografia de perfil */
+  .ghibli-photo-filter {
+    filter: sepia(0.28) saturate(1.15) contrast(0.95) brightness(0.96) hue-rotate(-6deg);
+  }
+
+  .group:hover .ghibli-photo-filter {
+    filter: sepia(0.05) saturate(1.12) contrast(1.02) brightness(1.03) hue-rotate(0deg);
+  }
+
+  /* Textura subtil de granulado de película de animação antiga */
+  .film-grain {
+    background-image: radial-gradient(rgba(253, 246, 226, 0.12) 1px, transparent 0);
+    background-size: 3px 3px;
+  }
+}
