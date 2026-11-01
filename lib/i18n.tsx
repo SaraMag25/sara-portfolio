@@ -23,11 +23,11 @@ export const dictionary = {
     },
     hero: {
       greeting: "Olá, Mundo!",
-      role: "Engenheira de Software",
+      role: "Engenheira de Computação",
       bio: "Olá! Sou estudante de Engenharia de Computação na UFC e adoro dar vida a ideias através do código. Gosto de construir desde a lógica por trás dos sistemas até interfaces leves e intuitivas que as pessoas realmente gostem de usar. Fique à vontade para explorar o meu cantinho e conversar comigo!",
       viewCv: "Ver Currículo",
       cvUrl: "/cv-sara-magalhaes.pdf",
-      photoAlt: "Sara Magalhães - Engenheira de Software",
+      photoAlt: "Sara Magalhães - Engenheira de Computação",
     },
     apiMock: {
       execute: "Executar",
@@ -81,11 +81,11 @@ export const dictionary = {
     },
     hero: {
       greeting: "Hello, World!",
-      role: "Software Engineer",
+      role: "Computer Engineer",
       bio: "Hi! I'm a Computer Engineering student at UFC (Federal University of Ceará) and I love bringing ideas to life through code. I enjoy building everything from the logic behind systems to lightweight, intuitive interfaces that people genuinely enjoy using. Feel free to explore my little corner and get in touch!",
       viewCv: "View CV",
       cvUrl: "/cv-sara-magalhaes-en.pdf",
-      photoAlt: "Sara Magalhães - Software Engineer",
+      photoAlt: "Sara Magalhães - Computer Engineer",
     },
     apiMock: {
       execute: "Run",

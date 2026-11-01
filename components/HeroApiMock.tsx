@@ -117,19 +117,13 @@ export default function HeroApiMock() {
                   <span className="text-terminal-muted">, </span>
                   <span className="text-terminal-cream">&quot;C/C++&quot;</span>
                   <span className="text-terminal-muted">{",\n    "}</span>
-                  <span className="text-terminal-cream">&quot;React&quot;</span>
-                  <span className="text-terminal-muted">, </span>
-                  <span className="text-terminal-cream">&quot;Next.js&quot;</span>
+                  <span className="text-terminal-cream">&quot;React / Next.js&quot;</span>
                   <span className="text-terminal-muted">, </span>
                   <span className="text-terminal-cream">&quot;Django&quot;</span>
                   <span className="text-terminal-muted">, </span>
-                  <span className="text-terminal-cream">&quot;Jetpack Compose&quot;</span>
-                  <span className="text-terminal-muted">{",\n    "}</span>
                   <span className="text-terminal-cream">&quot;PostgreSQL&quot;</span>
-                  <span className="text-terminal-muted">, </span>
-                  <span className="text-terminal-cream">&quot;Computer Vision (YOLO)&quot;</span>
-                  <span className="text-terminal-muted">, </span>
-                  <span className="text-terminal-cream">&quot;Edge AI&quot;</span>
+                  <span className="text-terminal-muted">{",\n    "}</span>
+                  <span className="text-terminal-cream">&quot;Edge AI / YOLO&quot;</span>
                   {"\n  "}
                   <span className="text-terminal-muted">{"]\n"}</span>
                   <span className="text-terminal-muted">{"}"}</span>

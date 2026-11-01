@@ -26,9 +26,9 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Sara Magalhães | Software Engineer",
+  title: "Sara Magalhães | Computer Engineering",
   description:
-    "Portfólio de Sara Magalhães, Software Engineer com experiência em desenvolvimento Full-Stack, construção de interfaces modernas com React e Next.js, e arquitetura de APIs RESTful escaláveis.",
+    "Portfólio de Sara Magalhães, graduanda em Engenharia de Computação na UFC, com experiência em desenvolvimento Full-Stack, Edge AI e Visão Computacional.",
   icons: {
     icon: [
       { url: "/icon.svg?v=2", type: "image/svg+xml" },
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     shortcut: "/icon.svg?v=2",
   },
   openGraph: {
-    title: "Sara Magalhães | Software Engineer",
+    title: "Sara Magalhães | Computer Engineering",
     description:
-      "Desenvolvimento Full-Stack com foco em React, Next.js, Python, Django e APIs RESTful de alta performance.",
+      "Graduanda em Engenharia de Computação @ UFC. Desenvolvimento Full-Stack, Edge AI e Visão Computacional.",
     url: siteUrl,
     siteName: "Sara Magalhães | Portfolio",
     type: "website",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sara Magalhães | Software Engineer",
+    title: "Sara Magalhães | Computer Engineering",
     description:
-      "Desenvolvimento Full-Stack com foco em React, Next.js, Python, Django e APIs RESTful de alta performance.",
+      "Graduanda em Engenharia de Computação @ UFC. Desenvolvimento Full-Stack, Edge AI e Visão Computacional.",
     images: ["/og-preview.png"],
   },
 };
