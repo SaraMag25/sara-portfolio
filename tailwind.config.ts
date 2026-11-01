@@ -9,11 +9,14 @@ const config: Config = {
   theme: {
     fontFamily: {
       sans: [
-        "var(--font-jetbrains-mono)",
-        "JetBrains Mono",
-        "Fira Code",
-        "Consolas",
-        "monospace",
+        "var(--font-inter)",
+        "Inter",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "sans-serif",
       ],
       mono: [
         "var(--font-jetbrains-mono)",
@@ -33,30 +36,30 @@ const config: Config = {
     extend: {
       colors: {
         terminal: {
-          bg: "#1a2421",         // Verde-floresta muito escuro e caloroso
-          earth: "#1e1b18",      // Terra-escuro / madeira antiga
-          window: "#1e1b18",     // Fundo de madeira/diário antigo das janelas
-          header: "#26211c",     // Barra superior estilo madeira/ferro antigo
-          border: "#2e2a24",     // Borda orgânica de madeira escura / papel antigo
-          text: "#fdf6e2",       // Creme suave principal
-          cream: "#f5e6c4",      // Pergaminho / creme quente secundário
-          muted: "#94a3b8",      // Tom suave para metadados e comentários
-          neon: "#86efac",       // Verde-folha vibrante e natural
-          green: "#86efac",      // Alias para verde-folha
-          neonHover: "#a7f3d0",  // Verde-folha suave iluminado no hover
-          lantern: "#fde047",    // Amarelo/laranja caloroso de lanterna mágica
-          lanternSoft: "#fef08a",// Brilho suave de lanterna
+          bg: "#0e2231",         // Mistura profunda de azul-noturno com verde-floresta Ghibli
+          earth: "#11293b",      // Azul-petróleo escuro
+          window: "#132d42",     // Fundo das janelas em azul-oceano escuro
+          header: "#183852",     // Barra superior em azul-marinho suave
+          border: "#28536b",     // Borda azul-esverdeada (teal/sky)
+          text: "#f4fbf7",       // Branco suave
+          cream: "#d5f5e3",      // Tom suave esverdeado/azulado claro
+          muted: "#94a3b8",      // Azul-ardósia suave para metadados
+          neon: "#86efac",       // Verde-folha vibrante Ghibli
+          green: "#7ccf35",      // Verde terminal clássico
+          neonHover: "#38bdf8",  // Azul-celeste luminoso no hover
+          lantern: "#38bdf8",    // Azul-ciano bioluminescente
+          lanternSoft: "#7dd3fc",// Luz azul-celeste suave
           dot: {
-            red: "#f87171",      // Coral orgânico suave
-            yellow: "#fde047",   // Luz de lanterna
-            green: "#86efac",    // Verde-folha
+            red: "#f87171",
+            yellow: "#38bdf8",
+            green: "#86efac",
           },
         },
       },
       boxShadow: {
-        lantern: "0 0 18px rgba(253, 224, 71, 0.28), 0 0 6px rgba(134, 239, 172, 0.18)",
-        "lantern-lg": "0 0 28px rgba(253, 224, 71, 0.38), 0 0 12px rgba(134, 239, 172, 0.25)",
-        leaf: "0 0 16px rgba(134, 239, 172, 0.25)",
+        lantern: "0 0 20px rgba(56, 189, 248, 0.3), 0 0 8px rgba(134, 239, 172, 0.25)",
+        "lantern-lg": "0 0 30px rgba(56, 189, 248, 0.45), 0 0 14px rgba(134, 239, 172, 0.35)",
+        leaf: "0 0 18px rgba(134, 239, 172, 0.3)",
       },
       keyframes: {
         fadeInUp: {

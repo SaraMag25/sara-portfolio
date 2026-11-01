@@ -4,23 +4,23 @@
 
 @layer base {
   body {
-    background-color: #1a2421;
+    background-color: #0e2231;
     background-image:
-      radial-gradient(circle at 18% 15%, rgba(253, 224, 71, 0.06) 0%, transparent 40%),
-      radial-gradient(circle at 82% 75%, rgba(134, 239, 172, 0.06) 0%, transparent 45%),
-      linear-gradient(180deg, #1a2421 0%, #171f1c 50%, #1e1b18 100%);
-    color: #fdf6e2;
+      radial-gradient(circle at 15% 18%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(134, 239, 172, 0.14) 0%, transparent 45%),
+      linear-gradient(180deg, #0d2133 0%, #112a38 50%, #12262b 100%);
+    color: #f4fbf7;
     font-family: var(--font-jetbrains-mono), "JetBrains Mono", "Fira Code", monospace;
   }
 }
 
 @layer utilities {
   .text-glow-lantern {
-    text-shadow: 0 0 12px rgba(253, 224, 71, 0.35), 0 0 4px rgba(254, 240, 138, 0.25);
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.45), 0 0 4px rgba(134, 239, 172, 0.3);
   }
 
   .text-glow-leaf {
-    text-shadow: 0 0 12px rgba(134, 239, 172, 0.35);
+    text-shadow: 0 0 12px rgba(134, 239, 172, 0.4);
   }
 
   /* Filtro Ghibli vintage de fim de tarde para a fotografia de perfil */

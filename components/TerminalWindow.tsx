@@ -17,16 +17,16 @@ export default function TerminalWindow({
 }: TerminalWindowProps) {
   return (
     <div
-      className={`group/window relative w-full animate-fade-in-up rounded-2xl border-2 border-[#2e2a24] bg-gradient-to-b from-terminal-window via-[#211d19] to-[#1a1815] shadow-2xl overflow-hidden transition-all duration-500 hover:border-terminal-neon/50 hover:shadow-lantern ${className}`}
+      className={`group/window relative w-full animate-fade-in-up rounded-2xl border-2 border-terminal-border bg-gradient-to-b from-terminal-window via-[#11284e] to-[#0b1d3a] shadow-2xl overflow-hidden transition-all duration-500 hover:border-terminal-neon/60 hover:shadow-lantern ${className}`}
     >
-      {/* Brilho subtil de lanterna mágica no topo da moldura de madeira */}
+      {/* Brilho subtil de lanterna mágica no topo da moldura */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-terminal-lantern/40 to-transparent opacity-70 group-hover/window:opacity-100 transition-opacity duration-500"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-terminal-neon/50 to-transparent opacity-70 group-hover/window:opacity-100 transition-opacity duration-500"
         aria-hidden="true"
       />
 
-      {/* Barra superior estilo diário de inventora / dispositivo antigo com magia digital */}
-      <div className="grid grid-cols-[auto_1fr_auto] items-center gap-2 px-3.5 sm:px-5 py-3 bg-terminal-header/95 border-b border-[#2e2a24] select-none relative">
+      {/* Barra superior estilo diário / dispositivo com magia digital */}
+      <div className="grid grid-cols-[auto_1fr_auto] items-center gap-2 px-3.5 sm:px-5 py-3 bg-terminal-header/95 border-b border-terminal-border select-none relative">
         {/* Três Susuwatari (bolinhas de fuligem) no canto superior esquerdo */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
           <Image

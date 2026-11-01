@@ -70,7 +70,7 @@ export default function ContactForm() {
               onChange={(e) => setName(e.target.value)}
               placeholder="Sara Magalhães"
               disabled={isLoading}
-              className="w-full px-4 py-2.5 rounded-xl bg-terminal-bg/90 border border-[#2e2a24] text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all disabled:opacity-60"
+              className="w-full px-4 py-2.5 rounded-xl bg-terminal-bg/90 border border-terminal-border text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all disabled:opacity-60"
             />
           </div>
 
@@ -91,7 +91,7 @@ export default function ContactForm() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="sara@example.com"
               disabled={isLoading}
-              className="w-full px-4 py-2.5 rounded-xl bg-terminal-bg/90 border border-[#2e2a24] text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all disabled:opacity-60"
+              className="w-full px-4 py-2.5 rounded-xl bg-terminal-bg/90 border border-terminal-border text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all disabled:opacity-60"
             />
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Your API request here..."
             disabled={isLoading}
-            className="w-full px-4 py-3 rounded-xl bg-terminal-bg/90 border border-[#2e2a24] text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all resize-y disabled:opacity-60"
+            className="w-full px-4 py-3 rounded-xl bg-terminal-bg/90 border border-terminal-border text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all resize-y disabled:opacity-60"
           />
         </div>
 

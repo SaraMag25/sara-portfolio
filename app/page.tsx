@@ -20,10 +20,10 @@ export default function HomePage() {
         >
           {/* Lado Esquerdo: Perfil, Foto, Bio e Botões */}
           <div className="w-full md:col-span-6 space-y-6">
-            {/* Fotografia de Perfil Estilizada (Escala de cinzas que ganha cor no hover) */}
-            <div className="relative w-64 sm:w-72 h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-[#2e2a24] bg-terminal-window group hover:border-terminal-neon transition-all duration-500 shadow-2xl hover:shadow-lantern">
+            {/* Fotografia de Perfil Estilizada */}
+            <div className="relative w-64 sm:w-72 h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-terminal-border bg-terminal-window group hover:border-terminal-neon transition-all duration-500 shadow-2xl hover:shadow-lantern">
               {/* Etiqueta de ficheiro de imagem estilo terminal */}
-              <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 bg-terminal-earth/85 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] text-terminal-cream font-mono border border-[#2e2a24] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 bg-terminal-earth/85 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] text-terminal-cream font-mono border border-terminal-border opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Image
                   src="/icons/totoro.png"
                   alt="Totoro"
@@ -46,9 +46,6 @@ export default function HomePage() {
 
               {/* Overlay subtil para harmonizar com o fundo escuro */}
               <div className="absolute inset-0 bg-terminal-bg/10 group-hover:bg-transparent transition-all duration-500 pointer-events-none" />
-
-              {/* Cursor de terminal a piscar no canto inferior direito */}
-              <div className="absolute bottom-3 right-3 z-20 w-2.5 h-4 rounded-sm bg-terminal-neon animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
             <div className="space-y-2">
@@ -71,13 +68,13 @@ export default function HomePage() {
               meu cantinho e conversar comigo!
             </p>
 
-            {/* Três botões com o mesmo estilo coeso: View CV, GitHub, LinkedIn */}
+            {/* Três botões: View CV colorido em gradiente, GitHub e LinkedIn */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="/cv-sara-magalhaes.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl border border-[#2e2a24] bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-neon hover:text-terminal-neon hover:shadow-leaf transition-all duration-300"
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-terminal-green via-terminal-neon to-terminal-lanternSoft text-terminal-bg font-bold text-xs sm:text-sm shadow-lantern hover:shadow-lantern-lg hover:scale-[1.03] transition-all duration-300"
               >
                 View CV
               </a>
@@ -85,7 +82,7 @@ export default function HomePage() {
                 href="https://github.com/SaraMag25"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl border border-[#2e2a24] bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-neon hover:text-terminal-neon hover:shadow-leaf transition-all duration-300"
+                className="px-5 py-2.5 rounded-xl border border-terminal-border bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-neon hover:text-terminal-neon hover:shadow-leaf transition-all duration-300"
               >
                 GitHub
               </a>
@@ -93,7 +90,7 @@ export default function HomePage() {
                 href="https://www.linkedin.com/in/sarasousamagalhaes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl border border-[#2e2a24] bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-neon hover:text-terminal-neon hover:shadow-leaf transition-all duration-300"
+                className="px-5 py-2.5 rounded-xl border border-terminal-border bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-neon hover:text-terminal-neon hover:shadow-leaf transition-all duration-300"
               >
                 LinkedIn
               </a>

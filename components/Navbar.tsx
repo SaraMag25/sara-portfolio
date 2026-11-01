@@ -102,8 +102,8 @@ export default function Navbar() {
         className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center overflow-x-auto no-scrollbar"
       >
         {/* Indicador lateral de workspace (visível em desktop) */}
-        <div className="hidden md:flex items-center gap-2 pr-4 py-3 text-xs text-terminal-cream/85 border-r border-[#2e2a24] select-none shrink-0">
-          <span className="w-2 h-2 rounded-full bg-terminal-lantern shadow-lantern" />
+        <div className="hidden md:flex items-center gap-2 pr-4 py-3 text-xs text-terminal-cream/85 border-r border-terminal-border select-none shrink-0">
+          <span className="w-2 h-2 rounded-full bg-terminal-neon shadow-leaf" />
           <span>sara-portfolio</span>
         </div>
 
@@ -118,9 +118,9 @@ export default function Navbar() {
                   href={tab.href}
                   onClick={(e) => handleTabClick(e, tab)}
                   title={tab.label}
-                  className={`flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-5 py-3 text-xs sm:text-sm border-r border-[#2e2a24] transition-all whitespace-nowrap ${
+                  className={`flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-5 py-3 text-xs sm:text-sm border-r border-terminal-border transition-all whitespace-nowrap ${
                     isActive
-                      ? "bg-terminal-window text-terminal-text border-t-2 border-t-terminal-lantern font-bold shadow-lantern"
+                      ? "bg-terminal-window text-terminal-text border-t-2 border-t-terminal-neon font-bold shadow-lantern"
                       : "bg-terminal-bg/80 text-terminal-cream/70 border-t-2 border-t-transparent hover:bg-terminal-window/70 hover:text-terminal-text"
                   }`}
                 >

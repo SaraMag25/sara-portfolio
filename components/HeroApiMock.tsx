@@ -34,7 +34,7 @@ export default function HeroApiMock() {
             disabled={status === "loading"}
             className="group/btn relative px-4 py-1.5 rounded-lg bg-gradient-to-r from-terminal-neon to-terminal-lanternSoft text-terminal-earth font-bold text-xs shadow-lantern hover:shadow-lantern-lg hover:scale-[1.03] transition-all duration-300 shrink-0 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-1.5"
           >
-            <span>{status === "loading" ? "Invocando..." : "Invoque"}</span>
+            <span>{status === "loading" ? "Executando..." : "Executar"}</span>
             <Image
               src="/icons/calcifer.png"
               alt="Calcifer"
@@ -53,7 +53,7 @@ export default function HeroApiMock() {
                 ? "Response (200 OK)"
                 : status === "loading"
                 ? "A consultar o servidor..."
-                : "Pronto para invocar"}
+                : "Pronto para executar"}
             </span>
             <span className="text-terminal-lantern text-glow-lantern">
               application/json
@@ -62,13 +62,14 @@ export default function HeroApiMock() {
 
           <div className="p-4 rounded-xl bg-terminal-bg/85 border border-terminal-border text-xs sm:text-sm overflow-x-auto leading-relaxed min-h-[230px] flex items-center">
             {status === "idle" && (
-              <p className="text-terminal-cream/80">
+              <p className="text-terminal-cream/90">
                 &gt; Clique em{" "}
                 <span className="text-terminal-lantern font-bold text-glow-lantern">
-                  Invoque
+                  Executar
                 </span>{" "}
                 para enviar uma requisição GET a{" "}
                 <code className="text-terminal-neon">api/cv/profile</code>...
+                <span className="inline-block w-2 h-4 bg-[#86efac] animate-pulse ml-1.5 align-middle" />
               </p>
             )}
 
@@ -81,7 +82,8 @@ export default function HeroApiMock() {
                   height={16}
                   className="w-4 h-4 object-contain animate-pulse"
                 />
-                <span>&gt; Invocando dados do servidor...</span>
+                <span>&gt; Executando requisição no servidor...</span>
+                <span className="inline-block w-2 h-4 bg-[#86efac] animate-pulse ml-1.5 align-middle" />
               </div>
             )}
 
@@ -90,21 +92,21 @@ export default function HeroApiMock() {
                 <code>
                   <span className="text-terminal-muted">{"{\n"}</span>
                   {"  "}
-                  <span className="text-terminal-neon">&quot;name&quot;</span>
+                  <span className="text-terminal-lantern">&quot;name&quot;</span>
                   <span className="text-terminal-muted">: </span>
-                  <span className="text-terminal-lanternSoft">
+                  <span className="text-terminal-neon">
                     &quot;Sara Magalhães&quot;
                   </span>
                   <span className="text-terminal-muted">{",\n"}</span>
                   {"  "}
-                  <span className="text-terminal-neon">&quot;course&quot;</span>
+                  <span className="text-terminal-lantern">&quot;course&quot;</span>
                   <span className="text-terminal-muted">: </span>
-                  <span className="text-terminal-lanternSoft">
+                  <span className="text-terminal-neon">
                     &quot;Computer Engineering @ UFC&quot;
                   </span>
                   <span className="text-terminal-muted">{",\n"}</span>
                   {"  "}
-                  <span className="text-terminal-neon">&quot;skills&quot;</span>
+                  <span className="text-terminal-lantern">&quot;skills&quot;</span>
                   <span className="text-terminal-muted">: [\n</span>
                   {"    "}
                   <span className="text-terminal-cream">&quot;Python&quot;</span>
@@ -119,6 +121,7 @@ export default function HeroApiMock() {
                   {"\n  "}
                   <span className="text-terminal-muted">{"]\n"}</span>
                   <span className="text-terminal-muted">{"}"}</span>
+                  <span className="inline-block w-2 h-4 bg-[#86efac] animate-pulse ml-1.5 align-middle" />
                 </code>
               </pre>
             )}

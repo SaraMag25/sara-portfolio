@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Lora } from "next/font/google";
+import { Inter, JetBrains_Mono, Lora } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -43,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt"
-      className={`${jetbrainsMono.variable} ${lora.variable} dark scroll-smooth`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${lora.variable} dark scroll-smooth`}
     >
       <body className="bg-terminal-bg text-terminal-text font-mono antialiased">
         {children}
