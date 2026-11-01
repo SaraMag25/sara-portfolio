@@ -36,24 +36,24 @@ const config: Config = {
     extend: {
       colors: {
         terminal: {
-          bg: "#08090c",         // Preto profundo de fundo
-          earth: "#0d0f14",      // Preto carvão para superfícies internas
-          window: "#12151e",     // Fundo das janelas em preto-grafite com leve toque noturno
-          header: "#181c26",     // Barra superior escura e elegante
-          border: "#262c3a",     // Borda discreta em grafite/azul-escuro
-          text: "#faf7f2",       // Branco-marfim suave
-          cream: "#efe4d2",      // Pergaminho / creme quente (carta e parede da foto)
-          muted: "#94a3b8",      // Cinza-azulado suave para metadados
-          neon: "#60a5fa",       // Azul royal luminoso (blusa e vaso azul da foto)
-          green: "#3b82f6",      // Azul cobalto intenso (base dos gradientes)
-          neonHover: "#93c5fd",  // Azul claro iluminado no hover
-          lantern: "#fbbf24",    // Amarelo/âmbar suave da vela na mesa e molduras douradas
-          lanternSoft: "#93c5fd",// Azul suave luminoso para gradientes e brilhos
-          rose: "#fb7185",       // Tom rosado/bordô da dália e do chapéu da foto
+          bg: "#08090c",
+          earth: "#0d0f14",
+          window: "#12151e",
+          header: "#181c26",
+          border: "#262c3a",
+          text: "#faf7f2",
+          cream: "#efe4d2",
+          muted: "#94a3b8",
+          neon: "#60a5fa",
+          green: "#3b82f6",
+          neonHover: "#93c5fd",
+          lantern: "#fbbf24",
+          lanternSoft: "#93c5fd",
+          rose: "#fb7185",
           dot: {
-            red: "#fb7185",      // Bordô/rosa da foto
-            yellow: "#fbbf24",   // Luz da vela
-            green: "#60a5fa",    // Azul da foto
+            red: "#fb7185",
+            yellow: "#fbbf24",
+            green: "#60a5fa",
           },
         },
       },

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface EditorTab {
-  id: "hero" | "projects" | "contact";
+  id: "hero" | "articles" | "projects" | "contact";
   fileName: string;
   label: string;
   href: string;
@@ -24,6 +24,16 @@ const TABS: EditorTab[] = [
     iconAlt: "Totoro icon",
     badgeColor: "text-terminal-lantern",
     badgeText: "TSX",
+  },
+  {
+    id: "articles",
+    fileName: "Articles.md",
+    label: "Artigos",
+    href: "#articles",
+    iconSrc: "/icons/calcifer.png",
+    iconAlt: "Calcifer icon",
+    badgeColor: "text-terminal-lantern",
+    badgeText: "PDF",
   },
   {
     id: "projects",
@@ -50,11 +60,11 @@ const TABS: EditorTab[] = [
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState<EditorTab["id"]>("hero");
 
-  // Atualiza a aba ativa automaticamente conforme o utilizador faz scroll
   useEffect(() => {
     const handleScroll = () => {
       const contactEl = document.getElementById("contact");
       const projectsEl = document.getElementById("projects");
+      const articlesEl = document.getElementById("articles");
 
       const isAtBottom =
         window.innerHeight + window.scrollY >=
@@ -72,6 +82,11 @@ export default function Navbar() {
         projectsEl.getBoundingClientRect().top <= triggerLine
       ) {
         setActiveTab("projects");
+      } else if (
+        articlesEl &&
+        articlesEl.getBoundingClientRect().top <= triggerLine
+      ) {
+        setActiveTab("articles");
       } else {
         setActiveTab("hero");
       }
@@ -101,7 +116,6 @@ export default function Navbar() {
         aria-label="Editor Tabs Navigation"
         className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center overflow-x-auto no-scrollbar"
       >
-        {/* Indicador lateral de terminal / workspace no topo da página */}
         <div className="flex items-center gap-2 pr-3 sm:pr-4 py-3 text-xs text-terminal-cream/85 border-r border-terminal-border select-none shrink-0">
           <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-terminal-window border border-terminal-border font-mono font-bold text-terminal-neon text-glow-leaf">
             &gt;_
@@ -109,7 +123,6 @@ export default function Navbar() {
           <span className="hidden md:inline">sara-portfolio</span>
         </div>
 
-        {/* Abas de ficheiros estilo VS Code com ícones Ghibli */}
         <ul className="flex items-stretch w-full md:w-auto">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.id;

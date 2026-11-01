@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-terminal-border bg-terminal-window/90 font-mono text-xs text-terminal-cream/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Lado Esquerdo: Frase de status + Águas-vivas bioluminescentes flutuantes */}
         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-center sm:text-left">
           <div className="flex items-center gap-2">
             <Image
@@ -39,7 +38,6 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* Lado Direito: Links para GitHub e LinkedIn */}
         <div className="flex items-center gap-5">
           <a
             href="https://github.com/SaraMag25"

@@ -17,7 +17,6 @@ export async function POST(request: Request) {
     const email = (body.email ?? body.Email ?? "").trim();
     const message = (body.message ?? body.Message ?? "").trim();
 
-    // Validação de campos obrigatórios
     if (!name || !email || !message) {
       return NextResponse.json(
         {
@@ -28,8 +27,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO (Próximo Commit): Integrar serviço real de envio de e-mail (ex: Resend / Nodemailer) usando process.env.RESEND_API_KEY
-    // Atualmente em modo de simulação (WIP) registando os dados no servidor
     console.log("==========================================");
     console.log("[POST /api/contact] New contact request:");
     console.log({ name, email, message, receivedAt: new Date().toISOString() });

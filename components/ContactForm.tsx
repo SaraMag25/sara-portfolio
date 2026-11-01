@@ -53,7 +53,6 @@ export default function ContactForm() {
     <div className="space-y-5">
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {/* Campo Name */}
           <div className="space-y-2">
             <label
               htmlFor="name"
@@ -74,7 +73,6 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* Campo Email */}
           <div className="space-y-2">
             <label
               htmlFor="email"
@@ -96,7 +94,6 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Campo Message */}
         <div className="space-y-2">
           <label
             htmlFor="message"
@@ -117,7 +114,6 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Rodapé do Formulário + Botão Submit */}
         <div className="flex items-center justify-between pt-2">
           <span className="text-xs text-terminal-cream/70">
             POST /api/contact
@@ -132,7 +128,6 @@ export default function ContactForm() {
         </div>
       </form>
 
-      {/* Output de Sucesso estilo Terminal */}
       {status === "success" && (
         <div
           role="status"
@@ -142,7 +137,6 @@ export default function ContactForm() {
         </div>
       )}
 
-      {/* Output de Erro estilo Terminal */}
       {status === "error" && (
         <div
           role="alert"

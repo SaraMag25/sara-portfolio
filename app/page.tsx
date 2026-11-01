@@ -9,20 +9,15 @@ import Footer from "@/components/Footer";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-terminal-bg text-terminal-text font-mono selection:bg-terminal-lantern selection:text-terminal-earth">
-      {/* Cabeçalho Global (Tabs estilo VS Code + Ghibli) */}
       <Navbar />
 
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-24 sm:space-y-28">
-        {/* ================= SECÇÃO HERO (INÍCIO) ================= */}
         <section
           id="hero"
           className="scroll-mt-24 animate-fade-in-up grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center"
         >
-          {/* Lado Esquerdo: Perfil, Foto, Bio e Botões */}
           <div className="w-full md:col-span-6 space-y-6">
-            {/* Fotografia de Perfil Estilizada */}
             <div className="relative w-64 sm:w-72 h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-terminal-border bg-terminal-window group hover:border-terminal-neon transition-all duration-500 shadow-2xl hover:shadow-lantern">
-              {/* Etiqueta de ficheiro de imagem estilo terminal */}
               <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 bg-terminal-earth/85 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] text-terminal-cream font-mono border border-terminal-border opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Image
                   src="/icons/totoro.png"
@@ -34,7 +29,6 @@ export default function HomePage() {
                 <span>sara.jpeg</span>
               </div>
 
-              {/* A Imagem de Perfil em cores naturais */}
               <Image
                 src="/sara.jpeg"
                 alt="Sara Magalhães - Software Engineer"
@@ -44,7 +38,6 @@ export default function HomePage() {
                 sizes="(max-width: 768px) 100vw, 288px"
               />
 
-              {/* Overlay subtil para harmonizar com o fundo escuro */}
               <div className="absolute inset-0 bg-terminal-bg/10 group-hover:bg-transparent transition-all duration-500 pointer-events-none" />
             </div>
 
@@ -68,7 +61,6 @@ export default function HomePage() {
               meu cantinho e conversar comigo!
             </p>
 
-            {/* Três botões: View CV colorido em gradiente, GitHub e LinkedIn */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="/cv-sara-magalhaes.pdf"
@@ -97,16 +89,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Lado Direito: Componente Interativo de Mock da API (100% largura em mobile) */}
           <div className="w-full md:col-span-6">
             <HeroApiMock />
           </div>
         </section>
 
-        {/* ================= SECÇÃO DE PROJETOS ================= */}
         <Projects />
 
-        {/* ================= SECÇÃO DE CONTACTOS ================= */}
         <section
           id="contact"
           className="scroll-mt-20 animate-fade-in-up space-y-8 w-full max-w-3xl mx-auto"
@@ -136,7 +125,6 @@ export default function HomePage() {
         </section>
       </main>
 
-      {/* Rodapé com Estilo de Terminal + Ghibli */}
       <Footer />
     </div>
   );

@@ -17,7 +17,6 @@ export default function HeroApiMock() {
   return (
     <TerminalWindow fileName="PortfolioController.py">
       <div className="space-y-4">
-        {/* Barra do Endpoint GET + Botão Invoque com ícone do Calcifer */}
         <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 p-2.5 rounded-xl bg-terminal-bg/90 border border-terminal-border">
           <div className="flex items-center gap-2.5 text-xs sm:text-sm overflow-x-auto">
             <span className="px-2.5 py-0.5 rounded-md bg-terminal-neon/15 text-terminal-neon font-bold border border-terminal-neon/30 shadow-leaf">
@@ -45,7 +44,6 @@ export default function HeroApiMock() {
           </button>
         </div>
 
-        {/* Área de Resposta da API */}
         <div className="space-y-2">
           <div className="flex items-center justify-between text-xs text-terminal-muted">
             <span>

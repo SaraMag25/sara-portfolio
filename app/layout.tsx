@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: "pt_PT",
     images: [
       {
-        url: "/og-preview.png", // Imagem de preview para partilha em redes sociais (og:image)
+        url: "/og-preview.png",
         width: 1200,
         height: 630,
         alt: "Sara Magalhães | Software Engineer Portfolio",

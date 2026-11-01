@@ -8,12 +8,51 @@ interface ProjectData {
   title: string;
   techStack: string[];
   description: React.ReactNode;
-  repoUrl: string;
+  repoUrl?: string;
   repoLabel?: string;
   secondaryRepoUrl?: string;
   secondaryRepoLabel?: string;
+  articleUrl?: string;
+  articleLabel?: string;
   images: string[];
 }
+
+const ARTICLE: ProjectData = {
+  id: "deteccao-pragas",
+  title: "DETECÇÃO DE INSETOS PRAGA (EDGE AI)",
+  techStack: [
+    "Python",
+    "YOLO12n",
+    "Deep Learning",
+    "Computer Vision",
+    "Edge AI",
+  ],
+  description: (
+    <>
+      Pesquisa científica e artigo desenvolvido na{" "}
+      <strong className="text-white font-semibold">UFC</strong> voltado à{" "}
+      <strong className="text-white font-semibold">
+        identificação automatizada de pragas agrícolas
+      </strong>{" "}
+      com Visão Computacional. O projeto alia o uso de armadilhas no campo, um
+      método de controle alternativo que{" "}
+      <strong className="text-white font-semibold">
+        reduz o uso de agrotóxicos
+      </strong>
+      , a uma inteligência artificial leve capaz de identificar os insetos
+      capturados automaticamente, substituindo a contagem manual lenta e
+      ajudando no monitoramento sustentável das lavouras.
+    </>
+  ),
+  articleUrl: "/artigo-pragas.pdf",
+  articleLabel: "Ler Artigo",
+  images: [
+    "/pragas-1.jpg",
+    "/pragas-2.png",
+    "/pragas-3.png",
+    "/pragas-4.png",
+  ],
+};
 
 const PROJECTS: ProjectData[] = [
   {
@@ -135,7 +174,6 @@ function ProjectCard({ project }: { project: ProjectData }) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-      {/* Coluna da Imagem (Maior destaque - 7 colunas) */}
       <div className="lg:col-span-7 relative group rounded-lg overflow-hidden shadow-2xl">
         <div className="relative w-full overflow-hidden rounded-lg">
           <div
@@ -155,10 +193,8 @@ function ProjectCard({ project }: { project: ProjectData }) {
           </div>
         </div>
 
-        {/* Botões SVG e Dots exibidos apenas se houver mais de 1 imagem */}
         {images.length > 1 && (
           <>
-            {/* Botão Anterior (SVG) */}
             <button
               type="button"
               onClick={prevSlide}
@@ -180,7 +216,6 @@ function ProjectCard({ project }: { project: ProjectData }) {
               </svg>
             </button>
 
-            {/* Botão Seguinte (SVG) */}
             <button
               type="button"
               onClick={nextSlide}
@@ -202,7 +237,6 @@ function ProjectCard({ project }: { project: ProjectData }) {
               </svg>
             </button>
 
-            {/* Indicadores (Dots) */}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
               {images.map((_, idx) => (
                 <button
@@ -222,7 +256,6 @@ function ProjectCard({ project }: { project: ProjectData }) {
         )}
       </div>
 
-      {/* Coluna de Texto (5 colunas) */}
       <div
         className="lg:col-span-5 flex flex-col items-start"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
@@ -253,26 +286,28 @@ function ProjectCard({ project }: { project: ProjectData }) {
         </p>
 
         <div className="flex flex-wrap items-center gap-3">
-          <a
-            href={project.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
-            }}
-            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-md border border-terminal-border bg-terminal-window/80 hover:bg-terminal-header hover:border-terminal-neon text-sm font-semibold text-white shadow-leaf transition-all"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              viewBox="0 0 16 16"
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-md border border-terminal-border bg-terminal-window/80 hover:bg-terminal-header hover:border-terminal-neon text-sm font-semibold text-white shadow-leaf transition-all"
             >
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-            </svg>
-            {project.repoLabel ?? "View Source"}
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+              </svg>
+              {project.repoLabel ?? "View Source"}
+            </a>
+          )}
 
           {project.secondaryRepoUrl && (
             <a
@@ -296,6 +331,37 @@ function ProjectCard({ project }: { project: ProjectData }) {
               {project.secondaryRepoLabel ?? "Back-end"}
             </a>
           )}
+
+          {project.articleUrl && (
+            <a
+              href={project.articleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-md border border-terminal-border bg-terminal-window/80 hover:bg-terminal-header hover:border-terminal-neon text-sm font-semibold text-white shadow-leaf transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <line x1="10" y1="9" x2="8" y2="9" />
+              </svg>
+              {project.articleLabel ?? "Ler Artigo"}
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -304,36 +370,64 @@ function ProjectCard({ project }: { project: ProjectData }) {
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="scroll-mt-20 space-y-12 animate-fade-in-up"
-    >
-      {/* Cabeçalho da Secção */}
-      <div className="group/title space-y-2 inline-block">
-        <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-terminal-text flex items-center gap-2.5">
-          <Image
-            src="/icons/leaf.png"
-            alt="Leaf icon"
-            width={20}
-            height={20}
-            className="w-5 h-5 object-contain shrink-0 transition-transform duration-300 group-hover/title:rotate-12 group-hover/title:scale-110"
-          />
-          <span className="font-mono text-terminal-neon text-glow-leaf">
-            ~/
-          </span>
-          <span>Projects.md</span>
-        </h2>
-        <p className="text-sm text-terminal-cream/75 font-mono">
-          Seleção de projetos e arquiteturas desenvolvidas
-        </p>
-      </div>
+    <div className="space-y-24 sm:space-y-28">
+      <section
+        id="articles"
+        className="scroll-mt-20 space-y-12 animate-fade-in-up"
+      >
+        <div className="group/title space-y-2 inline-block">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-terminal-text flex items-center gap-2.5">
+            <Image
+              src="/icons/calcifer.png"
+              alt="Calcifer icon"
+              width={20}
+              height={20}
+              className="w-5 h-5 object-contain shrink-0 transition-transform duration-300 group-hover/title:scale-110"
+            />
+            <span className="font-mono text-terminal-neon text-glow-leaf">
+              ~/
+            </span>
+            <span>Articles.md</span>
+          </h2>
+          <p className="text-sm text-terminal-cream/75 font-mono">
+            Pesquisa científica e publicações académicas
+          </p>
+        </div>
 
-      {/* Lista de Projetos Empilhados com Espaçamento Amplo (space-y-24) */}
-      <div className="space-y-24">
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-    </section>
+        <div className="space-y-24">
+          <ProjectCard project={ARTICLE} />
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        className="scroll-mt-20 space-y-12 animate-fade-in-up"
+      >
+        <div className="group/title space-y-2 inline-block">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-terminal-text flex items-center gap-2.5">
+            <Image
+              src="/icons/leaf.png"
+              alt="Leaf icon"
+              width={20}
+              height={20}
+              className="w-5 h-5 object-contain shrink-0 transition-transform duration-300 group-hover/title:rotate-12 group-hover/title:scale-110"
+            />
+            <span className="font-mono text-terminal-neon text-glow-leaf">
+              ~/
+            </span>
+            <span>Projects.md</span>
+          </h2>
+          <p className="text-sm text-terminal-cream/75 font-mono">
+            Seleção de projetos e arquiteturas desenvolvidas
+          </p>
+        </div>
+
+        <div className="space-y-24">
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

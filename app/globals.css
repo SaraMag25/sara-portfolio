@@ -24,7 +24,6 @@
     text-shadow: 0 0 12px rgba(96, 165, 250, 0.4);
   }
 
-  /* Filtro Ghibli vintage de fim de tarde para a fotografia de perfil */
   .ghibli-photo-filter {
     filter: sepia(0.28) saturate(1.15) contrast(0.95) brightness(0.96) hue-rotate(-6deg);
   }
@@ -33,7 +32,6 @@
     filter: sepia(0.05) saturate(1.12) contrast(1.02) brightness(1.03) hue-rotate(0deg);
   }
 
-  /* Textura subtil de granulado de película de animação antiga */
   .film-grain {
     background-image: radial-gradient(rgba(253, 246, 226, 0.12) 1px, transparent 0);
     background-size: 3px 3px;
