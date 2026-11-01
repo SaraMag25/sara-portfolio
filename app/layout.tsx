@@ -21,7 +21,11 @@ const lora = Lora({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://sara-portfolio.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Sara Magalhães | Software Engineer",
   description:
     "Portfólio de Sara Magalhães, Software Engineer com experiência em desenvolvimento Full-Stack, construção de interfaces modernas com React e Next.js, e arquitetura de APIs RESTful escaláveis.",
@@ -35,6 +39,8 @@ export const metadata: Metadata = {
     title: "Sara Magalhães | Software Engineer",
     description:
       "Desenvolvimento Full-Stack com foco em React, Next.js, Python, Django e APIs RESTful de alta performance.",
+    url: siteUrl,
+    siteName: "Sara Magalhães | Portfolio",
     type: "website",
     locale: "pt_BR",
     alternateLocale: ["en_US"],
@@ -46,6 +52,13 @@ export const metadata: Metadata = {
         alt: "Sara Magalhães | Software Engineer Portfolio",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sara Magalhães | Software Engineer",
+    description:
+      "Desenvolvimento Full-Stack com foco em React, Next.js, Python, Django e APIs RESTful de alta performance.",
+    images: ["/og-preview.png"],
   },
 };
 
