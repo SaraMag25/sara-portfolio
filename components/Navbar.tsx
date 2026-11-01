@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n";
 
 interface EditorTab {
   id: "hero" | "articles" | "projects" | "contact";
   fileName: string;
-  label: string;
   href: string;
   iconSrc: string;
   iconAlt: string;
@@ -18,7 +18,6 @@ const TABS: EditorTab[] = [
   {
     id: "hero",
     fileName: "page.tsx",
-    label: "Início",
     href: "#hero",
     iconSrc: "/icons/totoro.png",
     iconAlt: "Totoro icon",
@@ -28,17 +27,15 @@ const TABS: EditorTab[] = [
   {
     id: "articles",
     fileName: "Articles.md",
-    label: "Artigos",
     href: "#articles",
     iconSrc: "/icons/calcifer.png",
     iconAlt: "Calcifer icon",
     badgeColor: "text-terminal-lantern",
-    badgeText: "PDF",
+    badgeText: "MD",
   },
   {
     id: "projects",
     fileName: "Projects.md",
-    label: "Projetos",
     href: "#projects",
     iconSrc: "/icons/leaf.png",
     iconAlt: "Leaf icon",
@@ -48,7 +45,6 @@ const TABS: EditorTab[] = [
   {
     id: "contact",
     fileName: "Contact.sh",
-    label: "Contactos",
     href: "#contact",
     iconSrc: "/icons/jiji.png",
     iconAlt: "Jiji icon",
@@ -58,6 +54,7 @@ const TABS: EditorTab[] = [
 ];
 
 export default function Navbar() {
+  const { lang, toggleLang, t } = useLanguage();
   const [activeTab, setActiveTab] = useState<EditorTab["id"]>("hero");
 
   useEffect(() => {
@@ -132,7 +129,7 @@ export default function Navbar() {
                 <a
                   href={tab.href}
                   onClick={(e) => handleTabClick(e, tab)}
-                  title={tab.label}
+                  title={t.nav[tab.id]}
                   className={`flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-5 py-3 text-xs sm:text-sm border-r border-terminal-border transition-all whitespace-nowrap ${
                     isActive
                       ? "bg-terminal-window text-terminal-text border-t-2 border-t-terminal-neon font-bold shadow-lantern"
@@ -158,6 +155,36 @@ export default function Navbar() {
             );
           })}
         </ul>
+
+        <button
+          type="button"
+          onClick={toggleLang}
+          title={t.nav.switchTo}
+          aria-label={t.nav.switchTo}
+          className="ml-auto shrink-0 flex items-center gap-1 my-2 px-2.5 py-1.5 rounded-lg border border-terminal-border bg-terminal-window text-[11px] sm:text-xs font-bold hover:border-terminal-neon hover:shadow-leaf transition-all"
+        >
+          <span
+            className={
+              lang === "pt"
+                ? "text-terminal-neon text-glow-leaf"
+                : "text-terminal-cream/50"
+            }
+          >
+            PT
+          </span>
+          <span className="text-terminal-border" aria-hidden="true">
+            |
+          </span>
+          <span
+            className={
+              lang === "en"
+                ? "text-terminal-neon text-glow-leaf"
+                : "text-terminal-cream/50"
+            }
+          >
+            EN
+          </span>
+        </button>
       </nav>
     </header>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import TerminalWindow from "@/components/TerminalWindow";
@@ -5,8 +7,11 @@ import HeroApiMock from "@/components/HeroApiMock";
 import Projects from "@/components/Projects";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/lib/i18n";
 
 export default function HomePage() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen flex flex-col bg-terminal-bg text-terminal-text font-mono selection:bg-terminal-lantern selection:text-terminal-earth">
       <Navbar />
@@ -31,7 +36,7 @@ export default function HomePage() {
 
               <Image
                 src="/sara.jpeg"
-                alt="Sara Magalhães - Software Engineer"
+                alt={t.hero.photoAlt}
                 fill
                 priority
                 className="object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-500"
@@ -43,32 +48,28 @@ export default function HomePage() {
 
             <div className="space-y-2">
               <p className="text-terminal-neon text-xs sm:text-sm tracking-widest uppercase flex items-center gap-2 text-glow-leaf">
-                <span>Hello, World!</span>
+                <span>{t.hero.greeting}</span>
               </p>
               <h1 className="text-3xl sm:text-5xl font-serif font-bold text-terminal-text tracking-tight">
                 Sara Magalhães
               </h1>
               <p className="text-lg sm:text-2xl text-terminal-cream/90 font-serif italic">
-                Software Engineer
+                {t.hero.role}
               </p>
             </div>
 
             <p className="text-terminal-cream/85 text-sm sm:text-base leading-relaxed max-w-xl">
-              Olá! Sou estudante de Engenharia de Computação na UFC e adoro dar
-              vida a ideias através do código. Gosto de construir desde a lógica
-              por trás dos sistemas até interfaces leves e intuitivas que as
-              pessoas realmente gostem de usar. Fique à vontade para explorar o
-              meu cantinho e conversar comigo!
+              {t.hero.bio}
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href="/cv-sara-magalhaes.pdf"
+                href={t.hero.cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-terminal-green via-terminal-neon to-terminal-lanternSoft text-terminal-bg font-bold text-xs sm:text-sm shadow-lantern hover:shadow-lantern-lg hover:scale-[1.03] transition-all duration-300"
               >
-                View CV
+                {t.hero.viewCv}
               </a>
               <a
                 href="https://github.com/SaraMag25"
@@ -115,7 +116,7 @@ export default function HomePage() {
               <span>Contact.sh</span>
             </h2>
             <p className="text-sm text-terminal-cream/75 font-mono">
-              Envie uma mensagem diretamente para a minha caixa de entrada
+              {t.sections.contactSubtitle}
             </p>
           </div>
 

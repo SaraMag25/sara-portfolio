@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import TerminalWindow from "@/components/TerminalWindow";
+import { useLanguage } from "@/lib/i18n";
 
 export default function HeroApiMock() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
   function handleExecute() {
@@ -33,7 +35,7 @@ export default function HeroApiMock() {
             disabled={status === "loading"}
             className="group/btn relative px-4 py-1.5 rounded-lg bg-gradient-to-r from-terminal-green via-terminal-neon to-terminal-lanternSoft text-terminal-bg font-bold text-xs shadow-lantern hover:shadow-lantern-lg hover:scale-[1.03] transition-all duration-300 shrink-0 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-1.5"
           >
-            <span>{status === "loading" ? "Executando..." : "Executar"}</span>
+            <span>{status === "loading" ? t.apiMock.executing : t.apiMock.execute}</span>
             <Image
               src="/icons/calcifer.png"
               alt="Calcifer"
@@ -48,10 +50,10 @@ export default function HeroApiMock() {
           <div className="flex items-center justify-between text-xs text-terminal-muted">
             <span>
               {status === "success"
-                ? "Response (200 OK)"
+                ? t.apiMock.response
                 : status === "loading"
-                ? "A consultar o servidor..."
-                : "Pronto para executar"}
+                ? t.apiMock.loading
+                : t.apiMock.ready}
             </span>
             <span className="text-terminal-lantern text-glow-lantern">
               application/json
@@ -61,11 +63,11 @@ export default function HeroApiMock() {
           <div className="p-4 rounded-xl bg-terminal-bg/85 border border-terminal-border text-xs sm:text-sm overflow-x-auto leading-relaxed min-h-[230px] flex items-center">
             {status === "idle" && (
               <p className="text-terminal-cream/90">
-                &gt; Clique em{" "}
+                &gt; {t.apiMock.idleBefore}{" "}
                 <span className="text-terminal-lantern font-bold text-glow-lantern">
-                  Executar
+                  {t.apiMock.execute}
                 </span>{" "}
-                para enviar uma requisição GET a{" "}
+                {t.apiMock.idleAfter}{" "}
                 <code className="text-terminal-neon">api/cv/profile</code>...
                 <span className="inline-block w-2 h-4 bg-terminal-neon animate-pulse ml-1.5 align-middle" />
               </p>
@@ -80,7 +82,7 @@ export default function HeroApiMock() {
                   height={16}
                   className="w-4 h-4 object-contain animate-pulse"
                 />
-                <span>&gt; Executando requisição no servidor...</span>
+                <span>&gt; {t.apiMock.loadingMsg}</span>
                 <span className="inline-block w-2 h-4 bg-terminal-neon animate-pulse ml-1.5 align-middle" />
               </div>
             )}
@@ -100,22 +102,34 @@ export default function HeroApiMock() {
                   <span className="text-terminal-lantern">&quot;course&quot;</span>
                   <span className="text-terminal-muted">: </span>
                   <span className="text-terminal-neon">
-                    &quot;Computer Engineering @ UFC&quot;
+                    &quot;{t.apiMock.course}&quot;
                   </span>
                   <span className="text-terminal-muted">{",\n"}</span>
                   {"  "}
                   <span className="text-terminal-lantern">&quot;skills&quot;</span>
-                  <span className="text-terminal-muted">: [\n</span>
+                  <span className="text-terminal-muted">{": [\n"}</span>
                   {"    "}
                   <span className="text-terminal-cream">&quot;Python&quot;</span>
                   <span className="text-terminal-muted">, </span>
+                  <span className="text-terminal-cream">&quot;TypeScript&quot;</span>
+                  <span className="text-terminal-muted">, </span>
+                  <span className="text-terminal-cream">&quot;Kotlin&quot;</span>
+                  <span className="text-terminal-muted">, </span>
+                  <span className="text-terminal-cream">&quot;C/C++&quot;</span>
+                  <span className="text-terminal-muted">{",\n    "}</span>
                   <span className="text-terminal-cream">&quot;React&quot;</span>
                   <span className="text-terminal-muted">, </span>
                   <span className="text-terminal-cream">&quot;Next.js&quot;</span>
                   <span className="text-terminal-muted">, </span>
                   <span className="text-terminal-cream">&quot;Django&quot;</span>
                   <span className="text-terminal-muted">, </span>
-                  <span className="text-terminal-cream">&quot;C/C++&quot;</span>
+                  <span className="text-terminal-cream">&quot;Jetpack Compose&quot;</span>
+                  <span className="text-terminal-muted">{",\n    "}</span>
+                  <span className="text-terminal-cream">&quot;PostgreSQL&quot;</span>
+                  <span className="text-terminal-muted">, </span>
+                  <span className="text-terminal-cream">&quot;Computer Vision (YOLO)&quot;</span>
+                  <span className="text-terminal-muted">, </span>
+                  <span className="text-terminal-cream">&quot;Edge AI&quot;</span>
                   {"\n  "}
                   <span className="text-terminal-muted">{"]\n"}</span>
                   <span className="text-terminal-muted">{"}"}</span>

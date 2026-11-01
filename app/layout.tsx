@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Lora } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Sara Magalhães | Software Engineer",
   description:
-    "Portefólio de Sara Magalhães, Software Engineer com experiência em desenvolvimento Full-Stack, construção de interfaces modernas com React e Next.js, e arquitetura de APIs RESTful escaláveis.",
+    "Portfólio de Sara Magalhães, Software Engineer com experiência em desenvolvimento Full-Stack, construção de interfaces modernas com React e Next.js, e arquitetura de APIs RESTful escaláveis.",
   icons: {
     icon: [
       { url: "/icon.svg?v=2", type: "image/svg+xml" },
@@ -35,7 +36,8 @@ export const metadata: Metadata = {
     description:
       "Desenvolvimento Full-Stack com foco em React, Next.js, Python, Django e APIs RESTful de alta performance.",
     type: "website",
-    locale: "pt_PT",
+    locale: "pt_BR",
+    alternateLocale: ["en_US"],
     images: [
       {
         url: "/og-preview.png",
@@ -54,11 +56,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="pt"
+      lang="pt-BR"
       className={`${inter.variable} ${jetbrainsMono.variable} ${lora.variable} dark scroll-smooth`}
     >
       <body className="bg-terminal-bg text-terminal-text font-mono antialiased">
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

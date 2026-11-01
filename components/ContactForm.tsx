@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -32,18 +34,16 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to send message.");
+        throw new Error(data.error);
       }
 
       setStatus("success");
       setName("");
       setEmail("");
       setMessage("");
-    } catch (error) {
+    } catch {
       setStatus("error");
-      setErrorMessage(
-        error instanceof Error ? error.message : "Unexpected error occurred."
-      );
+      setErrorMessage(t.contact.errorGeneric);
     } finally {
       setIsLoading(false);
     }
@@ -58,7 +58,7 @@ export default function ContactForm() {
               htmlFor="name"
               className="block text-xs sm:text-sm text-terminal-cream/85"
             >
-              Name <span className="text-terminal-lantern">*</span>
+              {t.contact.name} <span className="text-terminal-lantern">*</span>
             </label>
             <input
               id="name"
@@ -67,7 +67,7 @@ export default function ContactForm() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Sara Magalhães"
+              placeholder={t.contact.namePlaceholder}
               disabled={isLoading}
               className="w-full px-4 py-2.5 rounded-xl bg-terminal-bg/90 border border-terminal-border text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all disabled:opacity-60"
             />
@@ -78,7 +78,7 @@ export default function ContactForm() {
               htmlFor="email"
               className="block text-xs sm:text-sm text-terminal-cream/85"
             >
-              Email <span className="text-terminal-lantern">*</span>
+              {t.contact.email} <span className="text-terminal-lantern">*</span>
             </label>
             <input
               id="email"
@@ -87,7 +87,7 @@ export default function ContactForm() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="sara@example.com"
+              placeholder={t.contact.emailPlaceholder}
               disabled={isLoading}
               className="w-full px-4 py-2.5 rounded-xl bg-terminal-bg/90 border border-terminal-border text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all disabled:opacity-60"
             />
@@ -99,7 +99,7 @@ export default function ContactForm() {
             htmlFor="message"
             className="block text-xs sm:text-sm text-terminal-cream/85"
           >
-            Message <span className="text-terminal-lantern">*</span>
+            {t.contact.message} <span className="text-terminal-lantern">*</span>
           </label>
           <textarea
             id="message"
@@ -108,7 +108,7 @@ export default function ContactForm() {
             required
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Your API request here..."
+            placeholder={t.contact.messagePlaceholder}
             disabled={isLoading}
             className="w-full px-4 py-3 rounded-xl bg-terminal-bg/90 border border-terminal-border text-terminal-text placeholder:text-terminal-muted/50 text-sm focus:outline-none focus:border-terminal-neon focus:shadow-leaf transition-all resize-y disabled:opacity-60"
           />
@@ -123,7 +123,7 @@ export default function ContactForm() {
             disabled={isLoading}
             className="group/submit px-6 py-2.5 rounded-xl bg-gradient-to-r from-terminal-green via-terminal-neon to-terminal-lanternSoft text-terminal-bg font-bold text-sm shadow-lantern hover:shadow-lantern-lg hover:scale-[1.02] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
           >
-            <span>{isLoading ? "Sending..." : "POST Request"}</span>
+            <span>{isLoading ? t.contact.sending : t.contact.send}</span>
           </button>
         </div>
       </form>
@@ -133,7 +133,7 @@ export default function ContactForm() {
           role="status"
           className="p-3.5 rounded-xl bg-terminal-bg border border-terminal-neon/40 text-terminal-neon text-xs sm:text-sm font-mono shadow-leaf"
         >
-          &gt; Status 200: Message delivered successfully.
+          &gt; {t.contact.success}
         </div>
       )}
 

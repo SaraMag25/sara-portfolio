@@ -1,6 +1,6 @@
 # Sara Magalhães | Portfolio (WIP)
 
-Portefólio Full-Stack construído com **Next.js 14**, **TypeScript** e **Tailwind CSS**, combinando a estética de um editor de código/terminal com uma atmosfera inspirada no **Studio Ghibli**.
+Portfólio Full-Stack (PT-BR / EN) construído com **Next.js 14**, **TypeScript** e **Tailwind CSS**, combinando a estética de um editor de código/terminal com uma atmosfera inspirada no **Studio Ghibli**.
 
 > **Status do Projeto:** Em construção (Work in Progress)
 
