@@ -9,6 +9,9 @@ interface ProjectData {
   techStack: string[];
   description: React.ReactNode;
   repoUrl: string;
+  repoLabel?: string;
+  secondaryRepoUrl?: string;
+  secondaryRepoLabel?: string;
   images: string[];
 }
 
@@ -31,7 +34,7 @@ const PROJECTS: ProjectData[] = [
       </>
     ),
     repoUrl: "https://github.com/LESC-lab/erp-lesc-interface-react",
-    images: ["/erp-lesc-1.png", "/erp-lesc-2.png"],
+    images: ["/erp-lesc-1.png?v=6", "/erp-lesc-2.png?v=6"],
   },
   {
     id: "assidui",
@@ -56,7 +59,65 @@ const PROJECTS: ProjectData[] = [
       </>
     ),
     repoUrl: "https://github.com/assidui",
-    images: ["/assidui-1.png", "/assidui-2.png"],
+    images: ["/assidui-1.png?v=6", "/assidui-2.png?v=6"],
+  },
+  {
+    id: "controle-residuos",
+    title: "APP DESCARTE DE RESÍDUOS",
+    techStack: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android Studio",
+      "Android",
+      "REST API",
+    ],
+    description: (
+      <>
+        O <strong className="text-white font-semibold">EcoCiclo</strong> é um
+        aplicativo voltado à gestão consciente e organização do descarte de
+        resíduos recicláveis e orgânicos. Criado na{" "}
+        <strong className="text-white font-semibold">
+          Residência em TIC (Capacita Brasil / iRede)
+        </strong>
+        , permite que os utilizadores registem os seus descartes diários por
+        categoria (papel, plástico, vidro, orgânico e eletrónico), acompanhem o
+        volume total reciclado a cada mês, criem novas categorias personalizadas
+        e consultem todo o histórico de coletas.
+      </>
+    ),
+    repoUrl:
+      "https://github.com/Capacita-Irede-C1/c1-mvp-controle-residuos-android",
+    images: [
+      "/residuos-1.png?v=6",
+      "/residuos-2.png?v=6",
+      "/residuos-3.png?v=6",
+      "/residuos-4.png?v=6",
+      "/residuos-5.png?v=6",
+      "/residuos-6.png?v=6",
+    ],
+  },
+  {
+    id: "monitorame",
+    title: "MONITORAME",
+    techStack: ["React", "Next.js", "Tailwind CSS", "REST API"],
+    description: (
+      <>
+        Plataforma de{" "}
+        <strong className="text-white font-semibold">
+          inteligência e análise de dados públicos municipais
+        </strong>{" "}
+        focada em compras governamentais. Ajuda empresas, fornecedores e
+        gestores a descobrir oportunidades de licitações na sua região, explorar
+        indicadores financeiros por município, período e perfil de fornecedor, e
+        comparar cenários de despesas públicas com transparência.
+      </>
+    ),
+    repoUrl: "https://github.com/Amontada-Valley-Codes/monitoraME",
+    repoLabel: "Front-end",
+    secondaryRepoUrl:
+      "https://github.com/Amontada-Valley-Codes/backend-monitoraME",
+    secondaryRepoLabel: "Back-end",
+    images: ["/monitorame-1.png?v=6", "/monitorame-2.png?v=6"],
   },
 ];
 
@@ -102,7 +163,7 @@ function ProjectCard({ project }: { project: ProjectData }) {
               type="button"
               onClick={prevSlide}
               aria-label="Imagem anterior"
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0f274c]/85 hover:bg-[#193b70] border border-sky-400/30 text-sky-100 flex items-center justify-center transition-colors shadow-md"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-terminal-bg/85 hover:bg-terminal-header border border-terminal-neon/35 text-terminal-text flex items-center justify-center transition-colors shadow-md"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +185,7 @@ function ProjectCard({ project }: { project: ProjectData }) {
               type="button"
               onClick={nextSlide}
               aria-label="Imagem seguinte"
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0f274c]/85 hover:bg-[#193b70] border border-sky-400/30 text-sky-100 flex items-center justify-center transition-colors shadow-md"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-terminal-bg/85 hover:bg-terminal-header border border-terminal-neon/35 text-terminal-text flex items-center justify-center transition-colors shadow-md"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +202,7 @@ function ProjectCard({ project }: { project: ProjectData }) {
               </svg>
             </button>
 
-            {/* Indicadores (Dots misturando verde e azul) */}
+            {/* Indicadores (Dots) */}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
               {images.map((_, idx) => (
                 <button
@@ -151,7 +212,7 @@ function ProjectCard({ project }: { project: ProjectData }) {
                   aria-label={`Ir para imagem ${idx + 1}`}
                   className={`h-2 rounded-full transition-all duration-500 ${
                     currentIndex === idx
-                      ? "w-5 bg-gradient-to-r from-[#86efac] to-[#38bdf8] scale-110"
+                      ? "w-5 bg-gradient-to-r from-terminal-green via-terminal-neon to-terminal-lantern scale-110"
                       : "w-2 bg-white/40 hover:bg-white/70"
                   }`}
                 />
@@ -167,48 +228,75 @@ function ProjectCard({ project }: { project: ProjectData }) {
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         <h3
-          className="text-2xl lg:text-3xl font-bold text-white tracking-tight uppercase"
+          className="text-2xl lg:text-3xl font-bold text-terminal-text tracking-tight uppercase"
           style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
         >
           {project.title}
         </h3>
 
-        <p className="font-mono text-sm text-gray-200 my-4 tracking-wide">
+        <p className="font-mono text-sm text-terminal-cream my-4 tracking-wide">
           {project.techStack.map((tech, idx) => (
             <React.Fragment key={tech}>
               {tech}
               {idx < project.techStack.length - 1 && (
-                <span className="text-[#86efac] mx-1">//</span>
+                <span className="text-terminal-neon mx-1">//</span>
               )}
             </React.Fragment>
           ))}
         </p>
 
         <p
-          className="text-sky-100/80 text-base lg:text-[17px] leading-relaxed font-normal mb-7"
+          className="text-terminal-cream/85 text-base lg:text-[17px] leading-relaxed font-normal mb-7"
           style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
         >
           {project.description}
         </p>
 
-        <a
-          href={project.repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
-          className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-md border border-terminal-border bg-terminal-window/80 hover:bg-terminal-header hover:border-terminal-neon text-sm font-semibold text-white shadow-leaf transition-all"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            viewBox="0 0 16 16"
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+            }}
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-md border border-terminal-border bg-terminal-window/80 hover:bg-terminal-header hover:border-terminal-neon text-sm font-semibold text-white shadow-leaf transition-all"
           >
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-          </svg>
-          View Source
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+            </svg>
+            {project.repoLabel ?? "View Source"}
+          </a>
+
+          {project.secondaryRepoUrl && (
+            <a
+              href={project.secondaryRepoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              }}
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-md border border-terminal-border bg-terminal-window/80 hover:bg-terminal-header hover:border-terminal-neon text-sm font-semibold text-white shadow-leaf transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+              </svg>
+              {project.secondaryRepoLabel ?? "Back-end"}
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

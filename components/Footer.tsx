@@ -31,7 +31,7 @@ export default function Footer() {
             />
           </div>
 
-          <span className="text-sky-200/85">
+          <span className="text-terminal-cream/85">
             status:{" "}
             <strong className="text-terminal-neon font-normal">
               transformando ideias em código

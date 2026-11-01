@@ -125,7 +125,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="group/submit px-6 py-2.5 rounded-xl bg-gradient-to-r from-terminal-neon to-terminal-lanternSoft text-terminal-earth font-bold text-sm shadow-lantern hover:shadow-lantern-lg hover:scale-[1.02] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
+            className="group/submit px-6 py-2.5 rounded-xl bg-gradient-to-r from-terminal-green via-terminal-neon to-terminal-lanternSoft text-terminal-bg font-bold text-sm shadow-lantern hover:shadow-lantern-lg hover:scale-[1.02] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
           >
             <span>{isLoading ? "Sending..." : "POST Request"}</span>
           </button>

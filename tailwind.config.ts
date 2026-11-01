@@ -36,30 +36,31 @@ const config: Config = {
     extend: {
       colors: {
         terminal: {
-          bg: "#0e2231",         // Mistura profunda de azul-noturno com verde-floresta Ghibli
-          earth: "#11293b",      // Azul-petróleo escuro
-          window: "#132d42",     // Fundo das janelas em azul-oceano escuro
-          header: "#183852",     // Barra superior em azul-marinho suave
-          border: "#28536b",     // Borda azul-esverdeada (teal/sky)
-          text: "#f4fbf7",       // Branco suave
-          cream: "#d5f5e3",      // Tom suave esverdeado/azulado claro
-          muted: "#94a3b8",      // Azul-ardósia suave para metadados
-          neon: "#86efac",       // Verde-folha vibrante Ghibli
-          green: "#7ccf35",      // Verde terminal clássico
-          neonHover: "#38bdf8",  // Azul-celeste luminoso no hover
-          lantern: "#38bdf8",    // Azul-ciano bioluminescente
-          lanternSoft: "#7dd3fc",// Luz azul-celeste suave
+          bg: "#08090c",         // Preto profundo de fundo
+          earth: "#0d0f14",      // Preto carvão para superfícies internas
+          window: "#12151e",     // Fundo das janelas em preto-grafite com leve toque noturno
+          header: "#181c26",     // Barra superior escura e elegante
+          border: "#262c3a",     // Borda discreta em grafite/azul-escuro
+          text: "#faf7f2",       // Branco-marfim suave
+          cream: "#efe4d2",      // Pergaminho / creme quente (carta e parede da foto)
+          muted: "#94a3b8",      // Cinza-azulado suave para metadados
+          neon: "#60a5fa",       // Azul royal luminoso (blusa e vaso azul da foto)
+          green: "#3b82f6",      // Azul cobalto intenso (base dos gradientes)
+          neonHover: "#93c5fd",  // Azul claro iluminado no hover
+          lantern: "#fbbf24",    // Amarelo/âmbar suave da vela na mesa e molduras douradas
+          lanternSoft: "#93c5fd",// Azul suave luminoso para gradientes e brilhos
+          rose: "#fb7185",       // Tom rosado/bordô da dália e do chapéu da foto
           dot: {
-            red: "#f87171",
-            yellow: "#38bdf8",
-            green: "#86efac",
+            red: "#fb7185",      // Bordô/rosa da foto
+            yellow: "#fbbf24",   // Luz da vela
+            green: "#60a5fa",    // Azul da foto
           },
         },
       },
       boxShadow: {
-        lantern: "0 0 20px rgba(56, 189, 248, 0.3), 0 0 8px rgba(134, 239, 172, 0.25)",
-        "lantern-lg": "0 0 30px rgba(56, 189, 248, 0.45), 0 0 14px rgba(134, 239, 172, 0.35)",
-        leaf: "0 0 18px rgba(134, 239, 172, 0.3)",
+        lantern: "0 0 20px rgba(96, 165, 250, 0.28), 0 0 8px rgba(251, 191, 36, 0.15)",
+        "lantern-lg": "0 0 30px rgba(96, 165, 250, 0.42), 0 0 14px rgba(251, 191, 36, 0.22)",
+        leaf: "0 0 18px rgba(96, 165, 250, 0.28)",
       },
       keyframes: {
         fadeInUp: {

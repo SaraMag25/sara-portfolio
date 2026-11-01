@@ -32,7 +32,7 @@ export default function HeroApiMock() {
             type="button"
             onClick={handleExecute}
             disabled={status === "loading"}
-            className="group/btn relative px-4 py-1.5 rounded-lg bg-gradient-to-r from-terminal-neon to-terminal-lanternSoft text-terminal-earth font-bold text-xs shadow-lantern hover:shadow-lantern-lg hover:scale-[1.03] transition-all duration-300 shrink-0 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-1.5"
+            className="group/btn relative px-4 py-1.5 rounded-lg bg-gradient-to-r from-terminal-green via-terminal-neon to-terminal-lanternSoft text-terminal-bg font-bold text-xs shadow-lantern hover:shadow-lantern-lg hover:scale-[1.03] transition-all duration-300 shrink-0 disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-1.5"
           >
             <span>{status === "loading" ? "Executando..." : "Executar"}</span>
             <Image
@@ -69,7 +69,7 @@ export default function HeroApiMock() {
                 </span>{" "}
                 para enviar uma requisição GET a{" "}
                 <code className="text-terminal-neon">api/cv/profile</code>...
-                <span className="inline-block w-2 h-4 bg-[#86efac] animate-pulse ml-1.5 align-middle" />
+                <span className="inline-block w-2 h-4 bg-terminal-neon animate-pulse ml-1.5 align-middle" />
               </p>
             )}
 
@@ -83,7 +83,7 @@ export default function HeroApiMock() {
                   className="w-4 h-4 object-contain animate-pulse"
                 />
                 <span>&gt; Executando requisição no servidor...</span>
-                <span className="inline-block w-2 h-4 bg-[#86efac] animate-pulse ml-1.5 align-middle" />
+                <span className="inline-block w-2 h-4 bg-terminal-neon animate-pulse ml-1.5 align-middle" />
               </div>
             )}
 
@@ -121,7 +121,7 @@ export default function HeroApiMock() {
                   {"\n  "}
                   <span className="text-terminal-muted">{"]\n"}</span>
                   <span className="text-terminal-muted">{"}"}</span>
-                  <span className="inline-block w-2 h-4 bg-[#86efac] animate-pulse ml-1.5 align-middle" />
+                  <span className="inline-block w-2 h-4 bg-terminal-neon animate-pulse ml-1.5 align-middle" />
                 </code>
               </pre>
             )}

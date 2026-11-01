@@ -17,7 +17,7 @@ export default function TerminalWindow({
 }: TerminalWindowProps) {
   return (
     <div
-      className={`group/window relative w-full animate-fade-in-up rounded-2xl border-2 border-terminal-border bg-gradient-to-b from-terminal-window via-[#11284e] to-[#0b1d3a] shadow-2xl overflow-hidden transition-all duration-500 hover:border-terminal-neon/60 hover:shadow-lantern ${className}`}
+      className={`group/window relative w-full animate-fade-in-up rounded-2xl border-2 border-terminal-border bg-gradient-to-b from-terminal-window via-[#0f121a] to-[#090b10] shadow-2xl overflow-hidden transition-all duration-500 hover:border-terminal-neon/60 hover:shadow-lantern ${className}`}
     >
       {/* Brilho subtil de lanterna mágica no topo da moldura */}
       <div

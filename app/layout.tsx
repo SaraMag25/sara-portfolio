@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   title: "Sara Magalhães | Software Engineer",
   description:
     "Portefólio de Sara Magalhães, Software Engineer com experiência em desenvolvimento Full-Stack, construção de interfaces modernas com React e Next.js, e arquitetura de APIs RESTful escaláveis.",
+  icons: {
+    icon: [
+      { url: "/icon.svg?v=2", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon.svg?v=2",
+  },
   openGraph: {
     title: "Sara Magalhães | Software Engineer",
     description:

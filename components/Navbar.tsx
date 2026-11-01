@@ -101,10 +101,12 @@ export default function Navbar() {
         aria-label="Editor Tabs Navigation"
         className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center overflow-x-auto no-scrollbar"
       >
-        {/* Indicador lateral de workspace (visível em desktop) */}
-        <div className="hidden md:flex items-center gap-2 pr-4 py-3 text-xs text-terminal-cream/85 border-r border-terminal-border select-none shrink-0">
-          <span className="w-2 h-2 rounded-full bg-terminal-neon shadow-leaf" />
-          <span>sara-portfolio</span>
+        {/* Indicador lateral de terminal / workspace no topo da página */}
+        <div className="flex items-center gap-2 pr-3 sm:pr-4 py-3 text-xs text-terminal-cream/85 border-r border-terminal-border select-none shrink-0">
+          <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-terminal-window border border-terminal-border font-mono font-bold text-terminal-neon text-glow-leaf">
+            &gt;_
+          </span>
+          <span className="hidden md:inline">sara-portfolio</span>
         </div>
 
         {/* Abas de ficheiros estilo VS Code com ícones Ghibli */}
