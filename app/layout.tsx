@@ -22,7 +22,7 @@ const lora = Lora({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://sara-portfolio.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://sara-portfolio-nine-zeta.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
