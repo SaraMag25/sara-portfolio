@@ -23,7 +23,7 @@ export default function Footer() {
         {/* Lado Direito: Links para GitHub e LinkedIn */}
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com"
+            href="https://github.com/SaraMag25"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-terminal-lanternSoft transition-colors"
@@ -34,7 +34,7 @@ export default function Footer() {
             /
           </span>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/sarasousamagalhaes"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-terminal-lanternSoft transition-colors"

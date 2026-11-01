@@ -15,7 +15,7 @@ export default function HeroApiMock() {
   }
 
   return (
-    <TerminalWindow fileName="PortfolioController.java">
+    <TerminalWindow fileName="PortfolioController.py">
       <div className="space-y-4">
         {/* Barra do Endpoint GET + Botão Invoque com ícone do Calcifer */}
         <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 p-2.5 rounded-xl bg-terminal-bg/90 border border-terminal-border">
@@ -50,10 +50,10 @@ export default function HeroApiMock() {
           <div className="flex items-center justify-between text-xs text-terminal-muted">
             <span>
               {status === "success"
-                ? "// Response (200 OK)"
+                ? "Response (200 OK)"
                 : status === "loading"
-                ? "// A consultar o servidor..."
-                : "// Pronto para invocar"}
+                ? "A consultar o servidor..."
+                : "Pronto para invocar"}
             </span>
             <span className="text-terminal-lantern text-glow-lantern">
               application/json
@@ -117,17 +117,7 @@ export default function HeroApiMock() {
                   <span className="text-terminal-muted">, </span>
                   <span className="text-terminal-cream">&quot;C/C++&quot;</span>
                   {"\n  "}
-                  <span className="text-terminal-muted">{"]"}</span>
-                  <span className="text-terminal-muted">{",\n"}</span>
-                  {"  "}
-                  <span className="text-terminal-neon">
-                    &quot;Open to work&quot;
-                  </span>
-                  <span className="text-terminal-muted">: </span>
-                  <span className="text-terminal-lantern font-bold text-glow-lantern">
-                    true
-                  </span>
-                  {"\n"}
+                  <span className="text-terminal-muted">{"]\n"}</span>
                   <span className="text-terminal-muted">{"}"}</span>
                 </code>
               </pre>

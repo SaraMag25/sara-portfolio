@@ -15,18 +15,18 @@ const PROJECTS_DATA: ProjectItem[] = [
     id: "01",
     title: "[WIP] Em Construção — Projeto 01",
     description:
-      "TODO: Descrição detalhada do projeto full-stack, arquitetura adotada e principais desafios técnicos resolvidos (será adicionado nos próximos commits).",
+      "Descrição detalhada do projeto full-stack, arquitetura adotada e principais desafios técnicos resolvidos (será adicionado nos próximos commits).",
     repoUrl: "https://github.com/SaraMag25",
-    imagePath: "// TODO: adicionar screenshot em /public/images/projects/",
+    imagePath: "Em breve: screenshot do projeto",
     techStack: ["Next.js", "TypeScript", "Tailwind", "Em breve..."],
   },
   {
     id: "02",
     title: "[WIP] Em Construção — Projeto 02",
     description:
-      "TODO: Documentação e link do repositório deste projeto serão adicionados nas próximas atualizações do portefólio.",
+      "Documentação e link do repositório deste projeto serão adicionados nas próximas atualizações do portefólio.",
     repoUrl: "https://github.com/SaraMag25",
-    imagePath: "// TODO: adicionar screenshot em /public/images/projects/",
+    imagePath: "Em breve: screenshot do projeto",
     techStack: ["Python", "Django", "REST API", "Em breve..."],
   },
 ];
@@ -53,7 +53,7 @@ export default function Projects() {
           <span>Projects.md</span>
         </h2>
         <p className="text-sm text-terminal-cream/75 font-mono">
-          // [WIP] Secção em construção — projetos reais serão adicionados nos próximos commits
+          Secção em construção — projetos reais serão adicionados em breve
         </p>
       </div>
 
@@ -96,9 +96,9 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {/* Tecnologias unidas por barras duplas */}
+              {/* Tecnologias separadas de forma limpa */}
               <p className="text-xs sm:text-sm text-terminal-neon font-mono pt-1 break-words">
-                {project.techStack.join(" // ")}
+                {project.techStack.join(" • ")}
               </p>
 
               {/* Link do Repositório */}

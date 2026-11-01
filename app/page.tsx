@@ -53,7 +53,7 @@ export default function HomePage() {
 
             <div className="space-y-2">
               <p className="text-terminal-neon text-xs sm:text-sm tracking-widest uppercase flex items-center gap-2 text-glow-leaf">
-                <span>// Hello, World!</span>
+                <span>Hello, World!</span>
               </p>
               <h1 className="text-3xl sm:text-5xl font-serif font-bold text-terminal-text tracking-tight">
                 Sara Magalhães
@@ -63,21 +63,23 @@ export default function HomePage() {
               </p>
             </div>
 
-            <p className="text-terminal-cream/80 text-sm sm:text-base leading-relaxed max-w-xl">
-              Engenheira de Software apaixonada por construir sistemas robustos
-              de ponta a ponta. Foco em arquiteturas limpas, APIs escaláveis e
-              interfaces rápidas que unem a precisão do terminal a uma atmosfera
-              humana e encantadora.
+            <p className="text-terminal-cream/85 text-sm sm:text-base leading-relaxed max-w-xl">
+              Olá! Sou estudante de Engenharia de Computação na UFC e adoro dar
+              vida a ideias através do código. Gosto de construir desde a lógica
+              por trás dos sistemas até interfaces leves e intuitivas que as
+              pessoas realmente gostem de usar. Fique à vontade para explorar o
+              meu cantinho e conversar comigo!
             </p>
 
-            {/* Três botões: View CV (TODO: adicionar PDF), GitHub, LinkedIn */}
+            {/* Três botões com o mesmo estilo coeso: View CV, GitHub, LinkedIn */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href="#hero"
-                title="TODO: Adicionar cv-sara-magalhaes.pdf na pasta public/"
-                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-terminal-neon to-terminal-lanternSoft text-terminal-earth font-bold text-xs sm:text-sm shadow-lantern hover:shadow-lantern-lg hover:scale-[1.02] transition-all duration-300"
+                href="/cv-sara-magalhaes.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-xl border border-[#2e2a24] bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-neon hover:text-terminal-neon hover:shadow-leaf transition-all duration-300"
               >
-                View CV (Em breve)
+                View CV
               </a>
               <a
                 href="https://github.com/SaraMag25"
@@ -88,10 +90,10 @@ export default function HomePage() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/sarasousamagalhaes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl border border-[#2e2a24] bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-lantern hover:text-terminal-lanternSoft hover:shadow-lantern transition-all duration-300"
+                className="px-5 py-2.5 rounded-xl border border-[#2e2a24] bg-terminal-window text-terminal-text text-xs sm:text-sm hover:border-terminal-neon hover:text-terminal-neon hover:shadow-leaf transition-all duration-300"
               >
                 LinkedIn
               </a>
@@ -127,11 +129,11 @@ export default function HomePage() {
               <span>Contact.sh</span>
             </h2>
             <p className="text-sm text-terminal-cream/75 font-mono">
-              // Envie uma requisição diretamente para a minha caixa de entrada
+              Envie uma mensagem diretamente para a minha caixa de entrada
             </p>
           </div>
 
-          <TerminalWindow fileName="ContactController.java">
+          <TerminalWindow fileName="ContactController.py">
             <ContactForm />
           </TerminalWindow>
         </section>

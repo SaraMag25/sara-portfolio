@@ -53,14 +53,24 @@ export default function Navbar() {
   // Atualiza a aba ativa automaticamente conforme o utilizador faz scroll
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 220;
-
       const contactEl = document.getElementById("contact");
       const projectsEl = document.getElementById("projects");
 
-      if (contactEl && scrollPosition >= contactEl.offsetTop) {
+      const isAtBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 80;
+
+      const triggerLine = window.innerHeight * 0.4;
+
+      if (
+        isAtBottom ||
+        (contactEl && contactEl.getBoundingClientRect().top <= triggerLine)
+      ) {
         setActiveTab("contact");
-      } else if (projectsEl && scrollPosition >= projectsEl.offsetTop) {
+      } else if (
+        projectsEl &&
+        projectsEl.getBoundingClientRect().top <= triggerLine
+      ) {
         setActiveTab("projects");
       } else {
         setActiveTab("hero");
@@ -68,6 +78,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -92,13 +103,7 @@ export default function Navbar() {
       >
         {/* Indicador lateral de workspace (visível em desktop) */}
         <div className="hidden md:flex items-center gap-2 pr-4 py-3 text-xs text-terminal-cream/85 border-r border-[#2e2a24] select-none shrink-0">
-          <Image
-            src="/icons/totoro.png"
-            alt="Totoro"
-            width={16}
-            height={16}
-            className="w-4 h-4 object-contain shrink-0"
-          />
+          <span className="w-2 h-2 rounded-full bg-terminal-lantern shadow-lantern" />
           <span>sara-portfolio</span>
         </div>
 
